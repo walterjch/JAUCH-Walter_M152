@@ -17,32 +17,37 @@
     <body>
         <?php include_once "navbar.html" ?>
         
-        
+        <div class="uk-child-width-1-3@m" uk-grid>
+            <div>
+                <div class="uk-card uk-card-default">
 
-        <div class="uk-child-width-expand@s uk-text-center" uk-grid uk-height-match="target: > div > .uk-card">
-
-            <div class="uk-card uk-card-default uk-width-1-3@m">
-                <div class="uk-card-header">
-                    <div class="uk-grid-small uk-flex-middle" uk-grid>
-                        <div class="uk-width-auto">
-                            <img class="uk-border-circle" width="40" height="40" src="img/pdp.jpg">
+                
+                    <div class="uk-card-header">
+                        <div class="uk-grid-small uk-flex-middle" uk-grid>
+                            <div class="uk-width-auto">
+                                <img class="uk-border-circle" width="40" height="40" src="img/pdp.jpg">
+                            </div>
+                        <div class="uk-width-expand">
+                            <h3 class="uk-card-title uk-margin-remove-bottom">Vacances Octobre 2018</h3>
+                                <p class="uk-text-meta uk-margin-remove-top"><time datetime="2016-04-01T19:00">Oct. 01, 2018</time></p>
                         </div>
-                    <div class="uk-width-expand">
-                        <h3 class="uk-card-title uk-margin-remove-bottom">Vacances Octobre 2018</h3>
-                            <p class="uk-text-meta uk-margin-remove-top"><time datetime="2016-04-01T19:00">Oct. 01, 2018</time></p>
                     </div>
-                </div>
-                </div>
-                <div class="uk-card-body">
-                    <p>Vacances avec les petits potes... à la cool :p ;) :D</p>
-                    <img class="" width="100%" height="100%" src="img/vacancesBorat.png">
-                </div>
-                <div class="uk-card-footer">
-                    <a href="#" class="uk-button uk-button-text">Read more</a>
+                    </div>
+                    <div class="uk-card-body">
+                        <p>Vacances avec les petits potes... à la cool :p ;) :D</p>
+                        <img class="" width="100%" height="100%" src="img/vacancesBorat.png">
+                    </div>
+                    <div class="uk-card-footer">
+                        <a href="#" class="uk-button uk-button-text">Read more</a>
+                    </div>              
+
+
                 </div>
             </div>
 
-            <div class="uk-card uk-card-default uk-width-1-3@m">
+            <div>
+                <div class="uk-card uk-card-default">
+
                 <div class="uk-card-header">
                     <div class="uk-grid-small uk-flex-middle" uk-grid>
                         <div class="uk-width-auto">
@@ -61,9 +66,13 @@
                 <div class="uk-card-footer">
                     <a href="#" class="uk-button uk-button-text">Read more</a>
                 </div>
+
+                </div>
             </div>
 
-            <div class="uk-card uk-card-default uk-width-1-3@m">
+            <div>
+                <div class="uk-card uk-card-default">
+
                 <div class="uk-card-header">
                     <div class="uk-grid-small uk-flex-middle" uk-grid>
                         <div class="uk-width-auto">
@@ -82,8 +91,9 @@
                 <div class="uk-card-footer">
                     <a href="#" class="uk-button uk-button-text">Read more</a>
                 </div>
-            </div>
 
+                </div>
+            </div>
         </div>
 
         
