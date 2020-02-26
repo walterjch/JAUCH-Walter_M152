@@ -12,7 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.7/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.7/dist/js/uikit-icons.min.js"></script>
 
-    <title>Document</title>
+    <title>Portfolio - Accueil</title>
 </head>
     <body>
         <?php include_once "navbar.html" ?>
