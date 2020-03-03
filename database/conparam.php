@@ -11,6 +11,6 @@ define('EDB_DBNAME', "m152portfolio");
 define('EDB_HOST', "127.0.0.1");
 define('EDB_PORT', "3306");
 define('EDB_USER', "M152_ADMIN");
-define('EDB_PASS', "");
+define('EDB_PASS', "Super");
 
 

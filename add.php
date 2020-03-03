@@ -3,22 +3,12 @@ require_once "functions.inc.php";
 
 
 $titrePost = filter_input(INPUT_POST, 'titrePost', FILTER_SANITIZE_STRING);
-$fichiers = $_FILES['files[]'];
-
-foreach ($fichiers["error"] as $key => $error) {
-    if ($error == UPLOAD_ERR_OK) {
-        $typeFichier = $fichiers["type"][$key];
-        $typesVoulus = array("image/gif", "image/png", "image/jpeg", "video/mp4", "audio/mpeg");
-        if(in_array($typeFichier, $typesVoulus)){
-            $tmp_name = $fichiers["tmp_name"][$key];
-            $nomFichier = basename($fichiers["name"][$key]);
-            $temp = explode(".", $fileName);
-            $newFileName = array_values($temp)[0] . round(microtime(true)) . rand() . '.' . end($temp);
-
-            //Upload à faire
-        }
-    }
+$files = $_FILES['upload'];
+$uploads_dir = './media';
+if (!empty($files)) {
+    saveFiles($files, $uploads_dir);
 }
+
 
 ?>
 <!DOCTYPE html>
@@ -60,7 +50,7 @@ foreach ($fichiers["error"] as $key => $error) {
     <span uk-icon="icon: cloud-upload"></span>
     <span class="uk-text-middle">Attach binaries by dropping them here or</span>
     <div uk-form-custom>
-        <input type="file" name="files[]" multiple accept="image/x-png,image/gif,image/jpeg">
+        <input type="file" name="upload[]" multiple accept="image/x-png,image/gif,image/jpeg">
         <span class="uk-link">selecting one</span>
     </div>
 </div>

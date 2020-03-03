@@ -16,6 +16,7 @@
 </head>
     <body>
         <?php include_once "navbar.html" ?>
+        <div><p>Bienvenue sur mon site !</p></div>
         
         <div class="uk-child-width-1-3@m" uk-grid>
             <div>
