@@ -3,10 +3,11 @@ require_once "functions.inc.php";
 
 
 $titrePost = filter_input(INPUT_POST, 'titrePost', FILTER_SANITIZE_STRING);
+$descriptionPost = filter_input(INPUT_POST,'descriptionPost', FILTER_SANITIZE_STRING);
 $files = $_FILES['upload'];
 $uploads_dir = './media';
 if (!empty($files)) {
-    saveFiles($files, $uploads_dir);
+    saveFiles($files, $uploads_dir, $titrePost, $descriptionPost);
 }
 
 
@@ -43,7 +44,7 @@ if (!empty($files)) {
         </div>
 
         <div class="uk-margin">
-            <textarea class="uk-textarea" rows="5" placeholder="Qu'est-ce que cela représente pour vous ?"></textarea>
+            <textarea class="uk-textarea" rows="5" placeholder="Qu'est-ce que cela représente pour vous ?" name="descriptionPost"></textarea>
         </div>
 
         <div class="js-upload uk-placeholder uk-text-center">
