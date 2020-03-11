@@ -8,7 +8,7 @@ function saveFiles($files, $uploads_dir, $postTitle, $postComment){
         if ($error == UPLOAD_ERR_OK) {
             $typeFichier = $files["type"][$key];
             $typesVoulus = array("image/gif", "image/png", "image/jpeg", "video/mp4", "audio/mpeg");
-            if(in_array($typeFichier, $typesVoulus)){
+            if(in_array($mime_type_content($files["tmp_name"][$key]), $typesVoulus)){
                 $tmp_name = $files["tmp_name"][$key];
                 $nomFichier = basename($files["name"][$key]);
                 $temp = explode(".", $nomFichier);
@@ -33,7 +33,7 @@ function newPostToDb($fileType, $fileName, $title, $comment){
     
     $lastInsertId = EDatabase::lastInsertId();
     newMediaToDb($fileType, $fileName, $lastInsertId);
-    return EDatabase::lastInsertId();
+    return $lastInsertId;
 }
 
 function newMediaToDb($fileType, $fileName, $idPost)
@@ -47,3 +47,15 @@ function newMediaToDb($fileType, $fileName, $idPost)
             ));
     return EDatabase::lastInsertId();
  }
+
+ function getAllPosts(){
+    $sql = $sql = 'SELECT p.idPost,p.commentaire,p.creationDate,p.modificationDate,m.idMedia,m.nomFichierMedia,m.typeMedia,m.creationDate,m.modificationDate,m.idPost_Media
+    FROM post as p
+    LEFT OUTER JOIN media as m
+    ON p.idPost = m.idPost_media';
+    $req = EDatabase::prepare($sql, array(PDO::ATTR_CURSOR, PDO::CURSOR_SCROLL));
+    $req->execute();
+    $res = $req->fetchAll(PDO::FETCH_ASSOC);
+    return $res;
+ }
+

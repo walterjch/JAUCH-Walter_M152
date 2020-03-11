@@ -1,3 +1,9 @@
+<?php
+require_once "functions.inc.php";
+$allPosts = getAllPosts();
+
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
